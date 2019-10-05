@@ -1,0 +1,6 @@
+{
+  "MultistreamServerPort": {
+    "type": "TCP",
+    "Port": 10999
+  }
+}
