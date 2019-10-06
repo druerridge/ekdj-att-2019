@@ -37,7 +37,7 @@ public class VideoPOI : MonoBehaviour, IFeaturePropertySettable
         }
     }
 
-    internal void StartVideo()
+    public void StartVideo()
     {
         if (!startedPlayback)
         {
@@ -47,7 +47,8 @@ public class VideoPOI : MonoBehaviour, IFeaturePropertySettable
             string videoUrl = (string)poiProperties["videoUrl1"];
             Debug.Log("Trying to play video: " + videoUrl);
             var videoPlayer = Instantiate(videoPlayerPrefab).GetComponent<VideoPlayer>();
-            videoPlayer.gameObject.transform.SetPositionAndRotation(videoPlayerPosition, videoPlayer.gameObject.transform.rotation);
+            // videoPlayer.gameObject.transform.SetPositionAndRotation(videoPlayerPosition, videoPlayer.gameObject.transform.rotation);
+            videoPlayer.gameObject.transform.SetPositionAndRotation(transform.position, videoPlayer.gameObject.transform.rotation);
             videoPlayer.url = videoUrl;
         }
     }

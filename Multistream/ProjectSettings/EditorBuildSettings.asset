@@ -12,18 +12,24 @@ EditorBuildSettings:
     path: Assets/IntegrationLabs/BaseDemoXMapboxIntegrationTest_v1.unity
     guid: 8eaf5e6c5208dbe488227d14c9c30b00
   - enabled: 0
-    path: Assets/StressTests/12Screens5GLocalOnly.unity
-    guid: f268d5eff47a4ae46b32e9c2004c6498
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/StressTests/6Screens5GLocalOnly.unity
-    guid: d017f50bd0f68ef42b6d37c8aebe649a
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/StressTests/V2_6Screens5GLocalOnly.unity
-    guid: 574b038358883fb40b853cda6e189a00
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/StressTests/10ScreensDropboxOnly.unity
     guid: 93767fe9bba27044c9a237ef24b5f51c
-  - enabled: 1
+  - enabled: 0
     path: Assets/StressTests/8ScreensDropboxOnly.unity
     guid: 5e65962169676fe478943dc483b43abf
+  - enabled: 0
+    path: Assets/DevLabs/MS-Dr_X1_LevelDesignV1.unity
+    guid: b8ddbb1a2acd0934faa44c69b019b1e3
+  - enabled: 1
+    path: Assets/DevLabs/MS-Dr_X2_BasicVideoPOIInteractionTest.unity
+    guid: 3a6150f8e05b0af4490475ecd0bc5d53
   m_configObjects: {}
