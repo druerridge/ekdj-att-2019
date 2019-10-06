@@ -11,8 +11,7 @@ public class VideoPOI : MonoBehaviour, IFeaturePropertySettable
     public GameObject highlightSphere;
     private static Dictionary<string, object> defaultProps = new Dictionary<string, object>()
     {
-        { "videoUrl1", "http://2115b16a.ngrok.io/videos/videoplayback1.mp4" },
-        { "videoUrl2", "http://2115b16a.ngrok.io/videos/videoplayback1.mp4" }
+        //{ "videoUrl", "http://2115b16a.ngrok.io/videos/videoplayback1.mp4" },
     };
     private Dictionary<string, object> poiProperties = defaultProps;
     internal bool highlighted;
@@ -44,7 +43,7 @@ public class VideoPOI : MonoBehaviour, IFeaturePropertySettable
             startedPlayback = true;
             var jsonString = JsonUtility.ToJson(poiProperties);
             Debug.Log("poiProperties: " + jsonString);
-            string videoUrl = (string)poiProperties["videoUrl1"];
+            string videoUrl = (string)poiProperties["videoUrl"];
             Debug.Log("Trying to play video: " + videoUrl);
             var videoPlayer = Instantiate(videoPlayerPrefab).GetComponent<VideoPlayer>();
             // videoPlayer.gameObject.transform.SetPositionAndRotation(videoPlayerPosition, videoPlayer.gameObject.transform.rotation);
@@ -57,6 +56,12 @@ public class VideoPOI : MonoBehaviour, IFeaturePropertySettable
     {
         var jsonString = JsonUtility.ToJson(props);
         Debug.Log("Props (" + props.Count  +"): " + jsonString);
+        foreach (KeyValuePair<string, object> entry in props)
+        {
+
+            Debug.Log("Key: " + entry.Key);
+            Debug.Log("Value: " + entry.Value);
+        }
         poiProperties = poiProperties.Union(props).ToDictionary(k => k.Key, v => v.Value);
     }
 }
