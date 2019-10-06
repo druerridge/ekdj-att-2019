@@ -3,12 +3,14 @@ using Mapbox.Unity.MeshGeneration.Interfaces;
 using UnityEngine;
 using UnityEngine.Video;
 using System.Linq;
+using UnityEngine.UI;
 
 public class VideoPOI : MonoBehaviour, IFeaturePropertySettable
 {
     public Vector3 videoPlayerPosition;
     public GameObject videoPlayerPrefab;
     public GameObject highlightSphere;
+    public TextMesh textMesh;
     private static Dictionary<string, object> defaultProps = new Dictionary<string, object>()
     {
         //{ "videoUrl", "http://2115b16a.ngrok.io/videos/videoplayback1.mp4" },
@@ -23,17 +25,35 @@ public class VideoPOI : MonoBehaviour, IFeaturePropertySettable
 
     }
 
+    public void Hightlight()
+    {
+        highlighted = true;
+        highlightSphere.SetActive(true);
+        textMesh.text = (string)poiProperties["name"];
+        textMesh.gameObject.SetActive(true);
+    }
+
+    public void Unhightlight()
+    {
+        highlighted = false;
+        textMesh.gameObject.SetActive(false);
+        highlightSphere.SetActive(false);
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (highlighted)
         {
             highlightSphere.SetActive(true);
+            textMesh.gameObject.SetActive(true);
         }
         else
         {
             highlightSphere.SetActive(false);
+            textMesh.gameObject.SetActive(false);
         }
+
     }
 
     public void StartVideo()
