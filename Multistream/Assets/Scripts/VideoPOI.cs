@@ -96,6 +96,9 @@ public class VideoPOI : MonoBehaviour, IFeaturePropertySettable
     private void StartVideoOnScreen(VideoObjectInteraction videoObjectInteraction)
     {
         var jsonString = JsonUtility.ToJson(poiProperties);
+        var orbGuider = FindObjectOfType<OrbGuider>();
+        Debug.Log("orbGuider isnull: " + (orbGuider == null));
+        //orbGuider.OrbFromPOItoTargetPanel(gameObject.transform.position, videoObjectInteraction.transform.position);
         string videoUrl = (string)poiProperties["videoUrl"];
         var videoPlayer = videoObjectInteraction.GetComponentInChildren<VideoPlayer>();
         // videoPlayer.gameObject.transform.SetPositionAndRotation(videoPlayerPosition, videoPlayer.gameObject.transform.rotation);
