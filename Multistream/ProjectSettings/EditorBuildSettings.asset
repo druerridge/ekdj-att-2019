@@ -4,5 +4,26 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 0
+    path: Assets/IntegrationLabs/CardboardBaseDemoTest.unity
+    guid: 0a65f3ce2223e7449b1f42b8f7dbdcca
+  - enabled: 0
+    path: Assets/IntegrationLabs/BaseDemoXMapboxIntegrationTest_v1.unity
+    guid: 8eaf5e6c5208dbe488227d14c9c30b00
+  - enabled: 0
+    path: Assets/StressTests/12Screens5GLocalOnly.unity
+    guid: f268d5eff47a4ae46b32e9c2004c6498
+  - enabled: 0
+    path: Assets/StressTests/6Screens5GLocalOnly.unity
+    guid: d017f50bd0f68ef42b6d37c8aebe649a
+  - enabled: 0
+    path: Assets/StressTests/V2_6Screens5GLocalOnly.unity
+    guid: 574b038358883fb40b853cda6e189a00
+  - enabled: 0
+    path: Assets/StressTests/10ScreensDropboxOnly.unity
+    guid: 93767fe9bba27044c9a237ef24b5f51c
+  - enabled: 1
+    path: Assets/StressTests/8ScreensDropboxOnly.unity
+    guid: 5e65962169676fe478943dc483b43abf
   m_configObjects: {}
