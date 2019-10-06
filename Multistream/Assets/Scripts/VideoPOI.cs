@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Video;
 using System.Linq;
 using UnityEngine.UI;
+using System;
 
 public class VideoPOI : MonoBehaviour, IFeaturePropertySettable
 {
@@ -61,15 +62,46 @@ public class VideoPOI : MonoBehaviour, IFeaturePropertySettable
         if (!startedPlayback)
         {
             startedPlayback = true;
-            var jsonString = JsonUtility.ToJson(poiProperties);
-            Debug.Log("poiProperties: " + jsonString);
-            string videoUrl = (string)poiProperties["videoUrl"];
-            Debug.Log("Trying to play video: " + videoUrl);
-            var videoPlayer = Instantiate(videoPlayerPrefab).GetComponent<VideoPlayer>();
-            // videoPlayer.gameObject.transform.SetPositionAndRotation(videoPlayerPosition, videoPlayer.gameObject.transform.rotation);
-            videoPlayer.gameObject.transform.SetPositionAndRotation(transform.position, videoPlayer.gameObject.transform.rotation);
-            videoPlayer.url = videoUrl;
+            VideoObjectInteraction screenToPlayOn = FindScreenToPlayOn();
+            StartVideoOnScreen(screenToPlayOn);
         }
+    }
+
+    private static VideoObjectInteraction FindScreenToPlayOn()
+    {
+        float lastStartedVideoTime = Time.time;
+        VideoObjectInteraction[] videoObjectInteractions = FindObjectsOfType<VideoObjectInteraction>();
+        Debug.Log("Found videoObjectInteractions.Length: " + videoObjectInteractions.Length);
+        VideoObjectInteraction videoObjectInteractionToPlayOn = null;
+
+        foreach (var videoObjectInteraction in videoObjectInteractions)
+        {
+            if (!videoObjectInteraction.gameObject.activeSelf)
+            {
+                videoObjectInteractionToPlayOn = videoObjectInteraction;
+                break;
+            }
+
+            if (videoObjectInteraction.lastStartedVideoTime < lastStartedVideoTime)
+            {
+                lastStartedVideoTime = videoObjectInteraction.lastStartedVideoTime;
+                videoObjectInteractionToPlayOn = videoObjectInteraction;
+            }
+        }
+
+        Debug.Log("videoObjectInteractionToPlayOn: " + videoObjectInteractionToPlayOn);
+        return videoObjectInteractionToPlayOn;
+    }
+
+    private void StartVideoOnScreen(VideoObjectInteraction videoObjectInteraction)
+    {
+        var jsonString = JsonUtility.ToJson(poiProperties);
+        string videoUrl = (string)poiProperties["videoUrl"];
+        var videoPlayer = videoObjectInteraction.GetComponentInChildren<VideoPlayer>();
+        // videoPlayer.gameObject.transform.SetPositionAndRotation(videoPlayerPosition, videoPlayer.gameObject.transform.rotation);
+        //videoPlayer.gameObject.transform.SetPositionAndRotation(transform.position, videoPlayer.gameObject.transform.rotation);
+        videoObjectInteraction.lastStartedVideoTime = Time.time;
+        videoPlayer.url = videoUrl;
     }
 
     public void Set(Dictionary<string, object> props)

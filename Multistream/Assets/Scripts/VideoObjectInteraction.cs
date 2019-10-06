@@ -13,6 +13,7 @@ public class VideoObjectInteraction : MonoBehaviour
     private Vector3 originalScale;
     private Vector3 originalPos;
     private Quaternion originalRot;
+    internal float lastStartedVideoTime;
 
     // Start is called before the first frame update
     void Start()
