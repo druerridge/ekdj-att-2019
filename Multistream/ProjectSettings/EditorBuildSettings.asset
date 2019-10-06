@@ -29,7 +29,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/DevLabs/MS-Dr_X1_LevelDesignV1.unity
     guid: b8ddbb1a2acd0934faa44c69b019b1e3
-  - enabled: 1
+  - enabled: 0
     path: Assets/DevLabs/MS-Dr_X2_BasicVideoPOIInteractionTest.unity
     guid: 3a6150f8e05b0af4490475ecd0bc5d53
+  - enabled: 0
+    path: Assets/DevLabs/MS-Dr_X3_BasicInteractionSuite.unity
+    guid: 726d8c3d1ef957e4ca3c4279dcea9f29
+  - enabled: 1
+    path: Assets/DevLabs/MS-Dr_X4_VideoInteractionPolish.unity
+    guid: f73ae9994119a1146afee5f8a2d7ab3e
   m_configObjects: {}
