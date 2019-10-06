@@ -59,12 +59,12 @@ public class VideoPOI : MonoBehaviour, IFeaturePropertySettable
 
     public void StartVideo()
     {
-        if (!startedPlayback)
-        {
+        //if (!startedPlayback)
+        //{
             startedPlayback = true;
             VideoObjectInteraction screenToPlayOn = FindScreenToPlayOn();
             StartVideoOnScreen(screenToPlayOn);
-        }
+        //}
     }
 
     private static VideoObjectInteraction FindScreenToPlayOn()
