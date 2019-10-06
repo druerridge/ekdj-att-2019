@@ -32,7 +32,7 @@ public class FlyCamExtended : MonoBehaviour
 
     void Start()
     {
-        Screen.lockCursor = true;
+        Screen.lockCursor = false;
     }
 
     void Update()
