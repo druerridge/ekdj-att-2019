@@ -845,7 +845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeStartedLerping: 0
-  lerpTime: 0.2
+  lerpTime: 1
   orbPrefab: {fileID: 5771456825319318063, guid: 0f6c52e7a6b1df94c8b8636b3adb83a7,
     type: 3}
   activeOrb: {fileID: 0}
