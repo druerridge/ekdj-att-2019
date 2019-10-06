@@ -25,10 +25,10 @@ public class OrbGuider : MonoBehaviour
     void Update()
     {
         // test
-        if (Input.GetKeyDown("space"))
-        {
-            OrbFromPOItoTargetPanel(new Vector3(0, 0, 0), new Vector3(0, 2, 0));
-        }
+        //if (Input.GetKeyDown("space"))
+        //{
+        //    OrbFromPOItoTargetPanel(new Vector3(0, 0, 0), new Vector3(0, 2, 0));
+        //}
 
         if (shouldLerp)
         {
