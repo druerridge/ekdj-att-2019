@@ -1,0 +1,31 @@
+{
+  "name": "MultistreamServer",
+  "version": "0.0.0",
+  "description": "MultistreamServer",
+  "main": "app.js",
+  "author": {
+    "name": "maestros",
+    "email": "tinkermeisters@maestrosgame.com"
+  },
+  "dependencies": {
+    "@types/express": "4.0.35",
+    "@types/mocha": "2.2.41",
+    "@types/nconf": "0.0.34",
+    "@types/node": "6.0.73",
+    "@types/request": "2.47.0",
+    "body-parser": "1.17.1",
+    "express": "4.15.2",
+    "jade": "1.11.0",
+    "morgan": "1.8.1",
+    "nconf": "0.8.4",
+    "request": "2.83.0",
+    "stylus": "0.54.5",
+    "winston": "2.3.1",
+    "winston-graylog2": "0.6.0"
+  },
+  "devDependencies": {
+    "mocha": "3.1.2",
+    "should": "11.2.1",
+    "sinon": "2.2.0"
+  }
+}
